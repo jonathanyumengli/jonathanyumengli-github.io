@@ -1,470 +1,273 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jonathan Yu-Meng Li | Telfer School of Management</title>
 
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <!-- SEO & Social -->
+  <meta name="description" content="Jonathan Yu‑Meng Li — RBC Financial Group Professor in Financial Risk Analytics at the Telfer School of Management. Research in optimization, risk, and machine learning." />
+  <meta property="og:title" content="Jonathan Yu‑Meng Li" />
+  <meta property="og:description" content="RBC Financial Group Professor in Financial Risk Analytics — optimization, risk, and machine learning." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="prof_pic.jpg" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary" />
 
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>JL</text></svg>">
 
+  <!-- Minimal, modern CSS (keeps layout minimal, elevates polish) -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111418;
+      --muted: #5b6470;
+      --link: #0d6efd;
+      --link-hover: #0a58ca;
+      --border: #e5e7eb;
+      --card: #f8f9fb;
+      --maxw: 880px;
+      --radius: 16px;
+      --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem;
+      --space-5: 1.5rem; --space-6: 2rem; --space-8: 3rem; --space-10: 4rem;
+      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0e1116; --fg: #e6e9ef; --muted: #afb6c0; --link: #7db3ff; --link-hover: #a6c8ff; --border: #222833; --card: #151a22; }
+      img{ filter: brightness(0.98) contrast(1.02); }
+    }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color: var(--fg); background: var(--bg); line-height: 1.6; font-size: 16px; text-rendering: optimizeLegibility; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space-4); }
+    header.site-header { position: sticky; top: 0; z-index: 100; backdrop-filter: saturate(180%) blur(6px); background: color-mix(in srgb, var(--bg) 85%, transparent); border-bottom: 1px solid var(--border); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: .75rem 0; }
+    .brand { font-weight: 700; letter-spacing: .2px; }
+    .brand a { color: inherit; text-decoration: none; }
+    nav ul { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+    nav a { text-decoration: none; color: var(--muted); padding: .25rem .5rem; border-radius: 8px; }
+    nav a:hover, nav a:focus, nav a.active { color: var(--fg); background: var(--card); outline: none; }
 
+    .hero { display: grid; grid-template-columns: 160px 1fr; gap: var(--space-5); padding: var(--space-8) 0 var(--space-6); align-items: center; }
+    .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; box-shadow: var(--shadow); }
+    h1 { font-size: clamp(1.75rem, 2.5vw, 2.25rem); margin: 0 0 .25rem; }
+    .title-sub { margin: 0; font-weight: 600; color: var(--muted); }
+    .meta { margin-top: .35rem; color: var(--muted); }
 
-<title>index.knit</title>
+    section { padding: var(--space-6) 0; border-top: 1px solid var(--border); }
+    section:first-of-type { border-top: 0; }
+    h2 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); margin: 0 0 var(--space-3); }
+    h3 { font-size: 1.05rem; margin: var(--space-4) 0 var(--space-2); }
 
-<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+    details { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: .75rem 1rem; }
+    details + details { margin-top: .75rem; }
 
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
+    .list { display: grid; gap: .9rem; }
+    .item { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: .9rem 1rem; }
+    .item a { color: var(--link); }
+    .item a:hover { color: var(--link-hover); }
+    .year { font-weight: 600; color: var(--muted); margin-right: .5rem; }
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
+    footer { padding: var(--space-8) 0 var(--space-6); color: var(--muted); font-size: .95rem; }
+    .muted { color: var(--muted); }
+    .actions { margin-top: .5rem; }
+    .actions a { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--fg); background: var(--card); border: 1px solid var(--border); padding: .5rem .75rem; border-radius: 10px; }
+    .actions a:hover { background: var(--bg); }
 
-
-
-
-
-
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 100px 1fr; }
+      .avatar { width: 100px; height: 100px; }
+      nav ul { gap: .5rem; }
+    }
+  </style>
 </head>
-
 <body>
-
-
-<div class="container-fluid main-container">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">Jonathan Yu-Meng Li</a>
+  <header class="site-header" role="banner">
+    <div class="container nav">
+      <div class="brand"><a href="#">Jonathan Yu‑Meng Li</a></div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research-focus">Research</a></li>
+          <li><a href="#working-papers">Working papers</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#students">Students</a></li>
+          <li><a href="#teaching">Teaching</a></li>
+        </ul>
+      </nav>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="#jonathan-yu-meng-li">About me</a>
-</li>
-<li>
-  <a href="#working-papers">Working papers</a>
-</li>
-<li>
-  <a href="#publications">Publications</a>
-</li>
-<li>
-  <a href="#teaching">Teaching</a>
-</li>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <!-- About -->
+    <section id="about">
+      <div class="hero">
+        <img class="avatar" src="prof_pic.jpg" alt="Portrait of Jonathan Yu‑Meng Li" />
+        <div>
+          <h1>Jonathan Yu‑Meng Li</h1>
+          <p class="title-sub">RBC Financial Group Professor in Risk Analytics</p>
+          <p class="meta">Associate Professor · Telfer School of Management · University of Ottawa</p>
+          <p class="meta">Ph.D. (University of Toronto)</p>
+          <p class="meta">Principal Coordinator, Center for Responsible Wealth Transition · Coordinator, Risk Intelligence & Resilient Solutions</p>
+          <div class="actions" aria-label="Quick links">
+            <a href="mailto:jonathan.li@telfer.uottawa.ca">✉️ Email</a>
+            <a href="https://responsiblewealthtransition.com/" target="_blank" rel="noopener">🌐 CRWT</a>
+            <a href="https://responsiblewealthtransition.com/sub-clusters/risk-intelligence-and-resilient-solutions/" target="_blank" rel="noopener">🧭 Risk Intelligence</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Focus (expandable) -->
+    <section id="research-focus">
+      <h2>Research Focus</h2>
+      <details>
+        <summary>Operations · Finance · Risk</summary>
+        <ul class="clean">
+          <li>Portfolio management</li>
+          <li>Asset pricing</li>
+          <li>Inventory management</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Optimization</summary>
+        <ul class="clean">
+          <li>Data‑driven optimization</li>
+          <li>Distributionally robust optimization</li>
+          <li>Preference‑robust optimization</li>
+          <li>Inverse optimization</li>
+        </ul>
+      </details>
+      <details>
+        <summary>ML & AI</summary>
+        <ul class="clean">
+          <li>Reinforcement learning</li>
+          <li>Deep learning</li>
+          <li>Generative AI</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Risk Models</summary>
+        <p class="muted">Worst-case risk</p>
+      </details>
+    </section>
+
+    <!-- Working Papers -->
+    <section id="working-papers">
+      <h2>Working papers</h2>
+      <div class="list">
+        <article class="item">
+          <h3><a href="https://optimization-online.org/2025/09/when-wasserstein-dro-reduces-exactly-complete-characterization-projection-equivalence-and-regularization/">When Wasserstein DRO reduces exactly: complete characterization, projection equivalence, and regularization</a></h3>
+          <p class="muted">with Chenling Huang* and Tiantian Mao</p>
+        </article>
+        <article class="item">
+          <h3><a href="https://arxiv.org/abs/2507.10735">Reconciling risk‑aversion paradoxes in the distribution‑free newsvendor problem: Scarf's rule meets dual utility</a></h3>
+          <p class="muted">with Tiantian Mao and Reza Valimoradi*</p>
+        </article>
+        <article class="item">
+          <h3><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4372148">Wasserstein‑Kelly portfolios: a robust data‑driven solution to optimize portfolio growth</a></h3>
+        </article>
+        <article class="item">
+          <h3><a href="https://arxiv.org/abs/2212.05716">On generalization and regularization via Wasserstein distributionally robust optimization</a></h3>
+          <p class="muted">with Qinyu Wu* and Tiantian Mao</p>
+        </article>
+        <article class="item">
+          <h3><a href="https://arxiv.org/abs/2207.09403">A general Wasserstein framework for data‑driven distributionally robust optimization: tractability and applications</a></h3>
+          <p class="muted">with Tiantian Mao</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="list">
+        <div class="item"><span class="year">2025</span> Distributionally robust optimization under distorted expectations. <strong>Operations Research</strong>, 73(2), 969–985. (with Jun Cai and Tiantian Mao)</div>
+        <div class="item"><span class="year">2023</span> WaveCorr: Deep reinforcement learning with permutation invariant convolutional policy networks for portfolio management. <strong>Operations Research Letters</strong>, 51(6), 680–686. (with Saeed Marzban*, Erick Delage, Jeremie Desgagne‑Bouchard, and Carl Dussault)</div>
+        <div class="item"><span class="year">2023</span> Deep reinforcement learning for equal risk pricing and hedging under dynamic expectile risk measures. <strong>Quantitative Finance</strong>, 23(10), 1411–1430. (with Saeed Marzban* and Erick Delage)</div>
+        <div class="item"><span class="year">2022</span> Equal risk pricing and hedging of financial derivatives with convex risk measures. <strong>Quantitative Finance</strong>, 22(1), 47–73. (with Saeed Marzban* and Erick Delage)</div>
+        <div class="item"><span class="year">2021</span> Inverse optimization of convex risk functions. <strong>Management Science</strong>, 67(11), 6629–7289.</div>
+        <div class="item"><span class="year">2018</span> Closed‑form solutions for worst‑case law invariant risk measures with application to robust portfolio optimization. <strong>Operations Research</strong>, 66(6), 1457–1759.</div>
+        <div class="item"><span class="year">2018</span> Minimizing risk exposure when the choice of a risk measure is ambiguous. <strong>Management Science</strong>, 64(1), 327–344. (with Erick Delage)</div>
+        <div class="item"><span class="year">2016</span> A stochastic semidefinite programming approach for bounds on option pricing under regime switching. <strong>Annals of Operations Research</strong>, 237(1–2), 41–75. (with Roy H. Kwon)</div>
+        <div class="item"><span class="year">2013</span> Portfolio selection under model uncertainty: a penalized moment‑based optimization approach. <strong>Journal of Global Optimization</strong>, 56(1), 131–164. (with Roy H. Kwon)</div>
+        <div class="item"><span class="year">2012</span> A moment approach to bounding exotic options under regime switching. <strong>Optimization</strong>, 61(10), 1253–1269. (with Michael Jong Kim and Roy H. Kwon)</div>
+        <div class="item"><span class="year">2012</span> Market price‑based convex risk measures: a distribution‑free optimization approach. <strong>Operations Research Letters</strong>, 40(2), 128–133. (with Roy H. Kwon)</div>
+      </div>
+    </section>
+
+    <!-- Students & Fellows -->
+    <section id="students">
+      <h2>Students & Fellows</h2>
+      <h3>Postdoctoral Fellow</h3>
+      <ul class="clean">
+        <li>Qinyu Wu (2025)</li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        
+      <h3>PhD Students</h3>
+      <ul class="clean">
+        <li>Penghao Mao (2025– )</li>
+        <li>Xinqiao Xie (Visiting 2024–2025)</li>
+        <li>Ziwei Zhang (2024– )</li>
+        <li>Saeed Asadi (2024– )</li>
+        <li>Nima Afsharhajari (2023– )</li>
+        <li>Reza Valimoradi (2022– )</li>
+        <li>Saeed Marzban (PhD, 2016–2021; co‑supervised with Erick Delage)</li>
       </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
 
-<div id="header">
+    </section>
 
+    <!-- Teaching -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <h3>Current Courses</h3>
+      <ul class="clean">
+        <li>(2025, Fall) MGT7103 Advanced Quantitative Analyses in Management (PhD)</li>
+        <li>(2025, Fall) MGT5301 Predictive Analytics (Master)</li>
+        <li>(2025, Winter) MGT7108 Optimization and Modeling (PhD)</li>
+        <li>(2025, Winter) MGT5101 Multivariate Research Methods (Master)</li>
+      </ul>
+      <h3>Past Courses</h3>
+      <ul class="clean">
+        <li>MGT5200 Foundations for Quantitative Methods (Master)</li>
+        <li>MGT6102 Financial Risk Management and Derivative Securities (Master)</li>
+        <li>ADM2302 Business Analytics (BCom)</li>
+        <li>ADM2302 Statistics for Management (BCom)</li>
+        <li>ADM3305 Business Simulation Analytics (BCom)</li>
+      </ul>
+    </section>
+  </main>
 
+  <footer class="container" role="contentinfo">
+    <div>© <span id="y"></span> Jonathan Yu‑Meng Li · Telfer School of Management, University of Ottawa</div>
+  </footer>
 
+  <!-- Scripts: year + active nav link on scroll -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const links = document.querySelectorAll('nav a[href^="#"]');
+    const onScroll = () => {
+      const y = window.scrollY + 90;
+      links.forEach(a => {
+        const sec = document.querySelector(a.getAttribute('href'));
+        a.classList.toggle('active', !!sec && sec.offsetTop <= y && (sec.offsetTop + sec.offsetHeight) > y);
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
 
-</div>
-
-
-<div id="section" class="section level2">
-<h2></h2>
-<p><img src="prof_pic.jpg" width="130" /></p>
-<div id="jonathan-yu-meng-li" class="section level3">
-<h3>Jonathan Yu-Meng Li</h3>
-<h4>RBC Financial Group Professor in Risk Analytics</h4>
-<p>Associate Professor<br />
-Telfer School of Management<br />
-University of Ottawa<br />
-<br />
-Ph.D. (University of Toronto)<br />
-M.A.Sc. (McMaster University)<br />
-<br />
-Principal coordinator for <a
-href="https://responsiblewealthtransition.com/">Center for a Responsible
-Wealth Transition (CRWT)</a><br />
-Coordinator for <a
-href="https://responsiblewealthtransition.com/sub-clusters/risk-intelligence-and-resilient-solutions/">Risk
-Intelligence and Resilient Solutions</a></p>
-<p><a
-href="mailto:jonathan.li@telfer.uottawa.ca"><i class="fas fa-envelope"></i></a>
-<i class="fab fa-github"></i> <i class="fab fa-linkedin"></i><br />
-<br />
-</p>
-</div>
-<div id="research-interests" class="section level3">
-<h3>Research interests</h3>
-<details>
-<summary>
-Operations, Finance, and Risk Management
-</summary>
-<ul>
-<li><p>Portfolio management</p></li>
-<li><p>Derivative pricing</p></li>
-<li><p>Inventory management</p></li>
-</ul>
-</details>
-<details>
-<summary>
-Optimization
-</summary>
-<ul>
-<li><p>Data-driven optimization</p></li>
-<li><p>Distributionally robust optimization</p></li>
-<li><p>Preference robust optimization</p></li>
-<li><p>Inverse optimization</p></li>
-</ul>
-</details>
-<details>
-<summary>
-Machine Learning
-</summary>
-<ul>
-<li><p>Reinforcement learning</p></li>
-<li><p>Deep learning</p></li>
-</ul>
-</details>
-<details>
-<summary>
-Risk Measures
-</summary>
-</details>
-<p><br />
-</p>
-<!-- ### News -->
-<p>(*co-authored by a student)</p>
-</div>
-<div id="working-papers" class="section level3">
-<h3>Working papers</h3>
-<ul>
-<li><p><a href="https://optimization-online.org/2025/09/when-wasserstein-dro-reduces-exactly-complete-characterization-projection-equivalence-and-regularization/"> When Wasserstein DRO reduces exactly: complete characterization, projection equivalence, and regularization</a> 
-(with Chenling Huang* and Tiantian Mao)</p></li>
-<li><p><a href="https://arxiv.org/abs/2507.10735"> Reconciling risk-aversion paradoxes in the distribution-free newsvendor problem: Scarf's
-rule meets dual utility.</a> 
-(with Tiantian Mao and Reza Valimoradi*)</p></li>
-<li><p><a
-href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4372148">Wasserstein-Kelly
-portfolios: a robust data-driven solution to optimize portfolio
-growth.</a></p></li>
-<li><p><a href="https://arxiv.org/abs/2212.05716">On generalization and
-regularization via Wasserstein distributionally robust optimization.</a>
-(with Qinyu Wu* and Tiantian Mao)</p></li>
-<li><p><a href="https://arxiv.org/abs/2207.09403">A general Wasserstein
-framework for data-driven distributionally robust optimization:
-tractability and applications.</a> (with Tiantian Mao)<br />
-<br />
-</p></li>
-</ul>
-</div>
-<div id="publications" class="section level3">
-<h3>Publications</h3>
-<ul>
-<li><p>[2025] Distributionally robust optimization under distorted expectations.
-<strong>Operations Research</strong>, 73(2), 969-985. (with Jun Cai and Tiantian
-Mao)</p></li>
-<li><p>[2023] WaveCorr: Deep reinforcement learning with permutation
-invariant convolutional policy networks for portfolio management.
-<strong>Operations Research Letters</strong>, 51(6), 680-686. (with Saeed
-Marzban*, Erick Delage, Jeremie Desgagne-Bouchard, and Carl
-Dussault)</p></li>
-<li><p>[2023] Deep reinforcement learning for equal risk pricing and
-hedging under dynamic expectile risk measures. <strong>Quantitative
-Finance</strong>, 23(10), 1411-1430. (with Saeed Marzban* and Erick
-Delage)</p></li>
-<li><p>[2022] Equal risk pricing and hedging of financial derivatives
-with convex risk measures. <strong>Quantitative Finance</strong>, 22(1),
-47-73. (with Saeed Marzban* and Erick Delage)</p></li>
-<li><p>[2021] Inverse optimization of convex risk functions.
-<strong>Management Science</strong>, 67(11), 6629-7289.</p></li>
-<li><p>[2018] Closed-form solutions for worst-case law invariant risk
-measures with application to robust portfolio optimization.
-<strong>Operations Research</strong>, 66(6), 1457-1759.</p></li>
-<li><p>[2018] Minimizing risk exposure when the choice of a risk measure
-is ambiguous. <strong>Management Science</strong>, 64(1): 327-344. (with
-Erick Delage)</p></li>
-<li><p>[2016] A stochastic semidefinite programming approach for bounds
-on option pricing under regime switching. <strong>Annals of Operations
-Research</strong>, 237(1-2): 41-75. (with Roy H. Kwon)</p></li>
-<li><p>[2013] Portfolio selection under model uncertainty: a penalized
-moment-based optimization approach. <strong>Journal of Global
-Optimization</strong>, 56(1), 131-164. (with Roy H. Kwon)</p></li>
-<li><p>[2012] A moment approach to bounding exotic options under regime
-switching. <strong>Optimization</strong>, 61(10), 1253-1269. (with
-Michael Jong Kim and Roy H. Kwon)</p></li>
-<li><p>[2012] Market price-based convex risk measures: a
-distribution-free optimization approach. <strong>Operations Research
-Letters</strong>, 40(2), 128-133. (with Roy H. Kwon)<br />
-<br />
-</p></li>
-</ul>
-</div>
-<div id="teaching" class="section level3">
-<h3>Teaching</h3>
-<ul>
-<li><p>Optimization (PhD)</p></li>
-<li><p>Multivariate Research Methods (MSc)</p></li>
-<li><p>Foundations for Quantitative Methods (MSc) : <font size="2">
-Introduction to Econometrics </font></p></li>
-<li><p>Financial Risk Management &amp; Derivative Securities
-(MSc)</p></li>
-<li><p>Business Analytics (BCom)</p></li>
-<li><p>Business Simulation Analytics (BCom)</p></li>
-<li><p>Statistics for Management (BCom)<br />
-<br />
-</p></li>
-</ul>
-</div>
-</div>
-
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
+  <!-- JSON‑LD schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jonathan Yu-Meng Li",
+    "jobTitle": "Associate Professor; RBC Financial Group Professor in Financial Risk Analytics",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "Telfer School of Management, University of Ottawa"},
+    "email": "mailto:jonathan.li@telfer.uottawa.ca",
+    "url": "https://example.com/",
+    "image": "prof_pic.jpg"
+  }
+  </script>
 </body>
 </html>
