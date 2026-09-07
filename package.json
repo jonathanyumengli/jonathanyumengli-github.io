@@ -1,0 +1,11 @@
+{
+  "name": "jonli-website-preview",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "description": "Optional browser preview of the Jekyll build; GitHub Pages uses Jekyll.",
+  "devDependencies": {
+    "vite": "8.2.2"
+  }
+}

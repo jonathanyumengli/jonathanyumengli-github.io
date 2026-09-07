@@ -1,0 +1,32 @@
+---
+layout: default
+title: RIO Lab
+nav: lab
+permalink: /lab/
+description: The Risk Intelligence and Optimization Lab at the Telfer School of Management, University of Ottawa. People, research data, and code.
+---
+<div class="page-heading lab-heading">
+  <p class="eyebrow">Telfer School of Management · University of Ottawa</p>
+  <h1>RIO Lab</h1>
+  <p class="lab-name">Risk Intelligence and Optimization Lab</p>
+  <p class="lab-statement">{{ site.data.copy.lab.statement | escape }}</p>
+  <p class="lab-context">Led by <a href="{{ '/' | relative_url }}">Jonathan Yu-Meng Li</a>.</p>
+</div>
+{% assign people = site.people | sort: 'order' %}{% assign current = people | where: 'status', 'current' %}
+{% assign groups = 'postdoc,phd,visitor' | split: ',' %}
+{% for group in groups %}{% assign members = current | where: 'group', group %}{% if members.size > 0 %}
+<section class="lab-section">
+  <div><h2>{% if group == 'postdoc' %}Postdoctoral fellows{% elsif group == 'phd' %}Doctoral students{% else %}Visiting researchers{% endif %}</h2></div>
+  <ul class="people-list">{% for person in members %}{% include person.html person=person %}{% endfor %}</ul>
+</section>
+{% endif %}{% endfor %}
+{% assign alumni = people | where: 'status', 'alumni' %}{% if alumni.size > 0 %}
+<section class="lab-section">
+  <div><h2>Alumni</h2></div>
+  <ul class="people-list">{% for person in alumni %}{% include person.html person=person %}{% endfor %}</ul>
+</section>
+{% endif %}
+<section class="lab-section" id="data-code">
+  <div><h2>Data &amp; code</h2><p class="section-caption">Research software, datasets, and replication materials.</p></div>
+  {% include resources.html %}
+</section>

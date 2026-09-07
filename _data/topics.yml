@@ -1,0 +1,24 @@
+- id: ai
+  label: Generative AI & Machine Learning
+  filter_label: Generative AI & ML
+  short_label: AI & ML
+  general: Generating risk scenarios for better decisions.
+  technical: Risk-aligned generation, generative DRO, and reinforcement learning.
+- id: dro
+  label: DRO & Optimal Transport
+  filter_label: DRO & Optimal Transport
+  short_label: DRO & OT
+  general: Making reliable decisions when models are imperfect.
+  technical: Distributionally robust optimization with contextual and heterogeneous data.
+- id: finance
+  label: Asset Pricing & Portfolio Choice
+  filter_label: Asset Pricing & Portfolios
+  short_label: Asset pricing & portfolios
+  general: Understanding what drives returns and investment risk.
+  technical: Empirical asset pricing, high-dimensional learning, portfolio choice, and hedging.
+- id: risk
+  label: Risk Measures & Preferences
+  filter_label: Risk & Preferences
+  short_label: Risk & preferences
+  general: Measuring risk and learning preferences from decisions.
+  technical: Risk measures, inverse optimization, preference ambiguity, and tail risk.

@@ -1,0 +1,33 @@
+current:
+- code: MGT7103
+  title: Advanced Quantitative Analyses in Management
+  level: PhD
+  term: Fall 2026
+- code: MGT5301
+  title: Predictive Analytics
+  level: Master
+  term: Fall 2026
+- code: MGT5101
+  title: Multivariate Research Methods
+  level: Master
+  term: Winter 2027
+- code: MGT6102
+  title: Financial Risk Management and Derivative Securities
+  level: Master
+  term: Winter 2027
+past:
+- code: MGT7108
+  title: Optimization and Modeling
+  level: PhD
+- code: MGT5200
+  title: Foundations for Quantitative Methods
+  level: Master
+- code: ADM2302
+  title: Business Analytics
+  level: BCom
+- code: ADM2302
+  title: Statistics for Management
+  level: BCom
+- code: ADM3305
+  title: Business Simulation Analytics
+  level: BCom

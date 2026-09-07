@@ -1,0 +1,11 @@
+title: Jonathan Yu-Meng Li
+url: https://www.jonli.net
+baseurl: ""
+description: "Jonathan Yu-Meng Li — research in optimization, machine learning, finance, and risk. Home of the Risk Intelligence and Optimization Lab."
+markdown: kramdown
+collections:
+  papers:
+    output: false
+  people:
+    output: false
+exclude: [README.md, Gemfile, Gemfile.lock, templates, scripts, vendor, site_libs, index_files, review, node_modules, package.json, package-lock.json, vite.config.mjs]

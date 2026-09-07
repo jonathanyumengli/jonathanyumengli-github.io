@@ -1,0 +1,7 @@
+# Copy this entry into _data/resources.yml, replacing its empty [] list.
+# Include only the link fields you need; remove unused ones.
+# Paper-specific resources should use code_url/data_url in the paper's file instead.
+- title: "Resource title"
+  description: "A brief description of the dataset or software."
+  code_url: "https://github.com/your-account/your-project"
+  data_url: "https://your-data-repository"

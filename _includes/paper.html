@@ -1,0 +1,12 @@
+{% assign paper = include.paper %}
+<article class="paper" id="{{ paper.slug }}" data-paper data-topics="{{ paper.topics | join: ' ' }}" data-status="{{ paper.status }}">
+  <h3>{% if paper.paper_url %}<a href="{{ paper.paper_url | escape }}">{{ paper.title | escape }}</a>{% else %}{{ paper.title | escape }}{% endif %}</h3>
+  {% if paper.coauthors %}<p class="paper-authors">with {{ paper.coauthors | escape }}</p>{% endif %}
+  {% if paper.status != 'working' %}<p class="paper-venue">{% if paper.status == 'working' %}Working paper{% elsif paper.status == 'accepted' %}{% if paper.journal %}<strong>{{ paper.journal | escape }}</strong> · {% endif %}Accepted / forthcoming{% if paper.year %} · {{ paper.year }}{% endif %}{% else %}<strong>{{ paper.journal | escape }}</strong>{% if paper.citation %}, {{ paper.citation | escape }}{% endif %} · {{ paper.year }}{% endif %}</p>{% endif %}
+  {% if paper.summary %}<p class="paper-summary">{{ paper.summary | escape }}</p>{% endif %}
+  <div class="paper-footer">
+  <ul class="paper-topics" aria-label="Research topics">{% for topic in site.data.topics %}{% if paper.topics contains topic.id %}<li>{{ topic.short_label | default: topic.label | escape }}</li>{% endif %}{% endfor %}</ul>
+  {% if paper.paper_url or paper.code_url or paper.data_url or paper.slides_url %}<p class="paper-links">{% if paper.paper_url %}<a href="{{ paper.paper_url | escape }}">Paper</a>{% endif %}{% if paper.code_url %}<a href="{{ paper.code_url | escape }}">Code</a>{% endif %}{% if paper.data_url %}<a href="{{ paper.data_url | escape }}">Data</a>{% endif %}{% if paper.slides_url %}<a href="{{ paper.slides_url | escape }}">Slides</a>{% endif %}</p>{% endif %}
+  </div>
+  {% assign abstract = paper.content | strip %}{% if abstract != '' %}<details class="abstract"><summary>Abstract</summary><div>{{ paper.content | markdownify }}</div></details>{% endif %}
+</article>

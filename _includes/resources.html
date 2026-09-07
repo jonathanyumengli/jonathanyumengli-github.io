@@ -1,0 +1,21 @@
+{% assign resource_count = 0 %}
+{% assign resource_papers = site.papers | sort: 'title' %}
+<div class="resource-list">
+{% for paper in resource_papers %}{% if paper.code_url or paper.data_url %}
+  {% assign resource_count = resource_count | plus: 1 %}
+  <article class="resource">
+    <h3><a href="{{ '/research/' | relative_url }}#{{ paper.slug }}">{{ paper.title | escape }}</a></h3>
+    {% if paper.resource_note %}<p class="resource-description">{{ paper.resource_note | escape }}</p>{% endif %}
+    <p class="paper-links">{% if paper.code_url %}<a href="{{ paper.code_url | escape }}">Code</a>{% endif %}{% if paper.data_url %}<a href="{{ paper.data_url | escape }}">Data</a>{% endif %}</p>
+  </article>
+{% endif %}{% endfor %}
+{% for resource in site.data.resources %}
+  {% assign resource_count = resource_count | plus: 1 %}
+  <article class="resource">
+    <h3>{{ resource.title | escape }}</h3>
+    {% if resource.description %}<p class="resource-description">{{ resource.description | escape }}</p>{% endif %}
+    <p class="paper-links">{% if resource.code_url %}<a href="{{ resource.code_url | escape }}">Code</a>{% endif %}{% if resource.data_url %}<a href="{{ resource.data_url | escape }}">Data</a>{% endif %}{% if resource.resource_url %}<a href="{{ resource.resource_url | escape }}">Resource</a>{% endif %}</p>
+  </article>
+{% endfor %}
+{% if resource_count == 0 %}<p class="resource-empty">Code and datasets will be listed here as they are released.</p>{% endif %}
+</div>

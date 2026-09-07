@@ -1,0 +1,31 @@
+---
+layout: default
+title: Research
+nav: research
+permalink: /research/
+description: Papers by Jonathan Yu-Meng Li on generative AI, distributionally robust optimization, optimal transport, asset pricing, and risk.
+---
+<div class="page-heading research-heading"><h1>Research</h1></div>
+<div class="research-controls" id="research-controls" hidden>
+  <div class="topic-filters" role="group" aria-label="Filter papers by research topic">
+    <button type="button" data-topic="all" aria-pressed="true">All topics</button>
+    {% for topic in site.data.topics %}<button type="button" data-topic="{{ topic.id }}" aria-pressed="false">{{ topic.filter_label | default: topic.label | escape }}</button>{% endfor %}
+  </div>
+  <div class="filter-meta">
+    <p id="result-count" role="status" aria-live="polite">{{ site.papers.size }} papers</p>
+    <label for="paper-status">Status <select id="paper-status"><option value="all">All statuses</option><option value="working">Working papers</option><option value="accepted">Accepted / forthcoming</option><option value="published">Published</option></select></label>
+  </div>
+</div>
+<p class="student-note">* indicates a student coauthor.</p>
+{% assign statuses = 'working,accepted,published' | split: ',' %}
+{% for status in statuses %}
+  {% assign papers = site.papers | where: 'status', status %}
+  {% if status == 'working' %}{% assign papers = papers | sort: 'order' %}{% else %}{% assign papers = papers | sort: 'year' | reverse %}{% endif %}
+  {% if papers.size > 0 %}
+  <section class="paper-group" data-paper-group="{{ status }}" aria-labelledby="{% if status == 'working' %}working-papers{% elsif status == 'accepted' %}accepted-papers{% else %}publications{% endif %}">
+    <h2 id="{% if status == 'working' %}working-papers{% elsif status == 'accepted' %}accepted-papers{% else %}publications{% endif %}">{% if status == 'working' %}Working papers{% elsif status == 'accepted' %}Accepted / forthcoming{% else %}Publications{% endif %}</h2>
+    {% for paper in papers %}{% include paper.html paper=paper %}{% endfor %}
+  </section>
+  {% endif %}
+{% endfor %}
+<div id="no-papers" class="empty-state" hidden><p>No papers match this topic and status.</p><button class="plain-button" type="button" id="clear-filters">Show all papers</button></div>

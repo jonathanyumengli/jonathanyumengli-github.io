@@ -1,0 +1,9 @@
+---
+layout: default
+title: Teaching
+nav: teaching
+permalink: /teaching/
+---
+<div class="page-heading"><h1>Teaching</h1></div>
+<section class="teaching-section"><h2>Current courses</h2><ul class="course-list">{% for course in site.data.teaching.current %}<li><h3>{{ course.title | escape }}</h3><p>{{ course.code | escape }} · {{ course.level | escape }} · {{ course.term | escape }}</p></li>{% endfor %}</ul></section>
+<section class="teaching-section"><h2>Past courses</h2><ul class="course-list">{% for course in site.data.teaching.past %}<li><h3>{{ course.title | escape }}</h3><p>{{ course.code | escape }} · {{ course.level | escape }}</p></li>{% endfor %}</ul></section>
