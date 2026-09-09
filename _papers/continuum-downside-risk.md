@@ -1,6 +1,6 @@
 ---
 title: Robust portfolio choice under a continuum of downside risk preferences
-status: conditionally accepted
+status: accepted
 year: 2026
 journal: Journal of Banking & Finance
 topics:
