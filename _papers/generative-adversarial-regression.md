@@ -1,6 +1,6 @@
 ---
 title: 'Generative adversarial regression (GAR): learning conditional risk scenarios'
-status: working
+status: accepted
 topics:
 - ai
 - risk
