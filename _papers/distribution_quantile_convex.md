@@ -1,5 +1,5 @@
 ---
-title: Distributions or quantiles?a convex variational theory of worst-case risk
+title: Distributions or quantiles? a convex variational theory of worst-case risk
 status: working
 topics:
 - risk
