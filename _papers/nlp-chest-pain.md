@@ -5,6 +5,5 @@ year: 2026
 journal: CJC Open
 topics:
 - ai
-- risk
 coauthors: Reza Valimoradi* and co-authors
 ---
