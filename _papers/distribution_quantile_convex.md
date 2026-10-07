@@ -3,7 +3,7 @@ title: Distributions or quantiles? a convex variational theory of worst-case ris
 status: working
 topics:
 - risk
-- finance
+- dro
 order: 10
 coauthors: Jianjun Gao, Zhen Wang, and Yang Zhang* 
 ---
